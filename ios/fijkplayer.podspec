@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 Flutter plugin for ijkplayer
                        DESC
-  s.homepage         = 'http://github.com/befovy/fijkplayer'
+  s.homepage         = 'https://github.com/y0unghe/fijkplayer'
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'befovy' => 'befovy@gmail.com' }
   s.source           = { :path => '.' }
