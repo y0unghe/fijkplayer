@@ -263,27 +263,27 @@ class _FijkViewState extends State<FijkView> {
     );
 
     await SystemChrome.setEnabledSystemUIOverlays([]);
-    bool changed = false;
-    if (_vWidth >= _vHeight) {
-      if (MediaQuery.of(context).orientation == Orientation.portrait)
-        changed = await FijkPlugin.setOrientationLandscape();
-    } else {
-      if (MediaQuery.of(context).orientation == Orientation.landscape)
-        changed = await FijkPlugin.setOrientationPortrait();
-    }
+    // bool changed = false;
+    // if (_vWidth >= _vHeight) {
+    //   if (MediaQuery.of(context).orientation == Orientation.portrait)
+    //     changed = await FijkPlugin.setOrientationLandscape();
+    // } else {
+    //   if (MediaQuery.of(context).orientation == Orientation.landscape)
+    //     changed = await FijkPlugin.setOrientationPortrait();
+    // }
 
     await Navigator.of(context).push(route);
     _fullScreen = false;
     widget.player.exitFullScreen();
     await SystemChrome.setEnabledSystemUIOverlays(
         [SystemUiOverlay.top, SystemUiOverlay.bottom]);
-    if (changed) {
-      if (_vWidth >= _vHeight) {
-        await FijkPlugin.setOrientationPortrait();
-      } else {
-        await FijkPlugin.setOrientationLandscape();
-      }
-    }
+    // if (changed) {
+    //   if (_vWidth >= _vHeight) {
+    //     await FijkPlugin.setOrientationPortrait();
+    //   } else {
+    //     await FijkPlugin.setOrientationLandscape();
+    //   }
+    // }
   }
 
   @override
