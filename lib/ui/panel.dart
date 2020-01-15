@@ -277,9 +277,8 @@ class _DefaultFijkPanelState extends State<_DefaultFijkPanel> {
                 } else {
                   player.enterFullScreen();
                 }
-                await new Future.delayed(const Duration(seconds: 5));
-                await platform.invokeMethod('disableAutoRotate');
-
+                // await new Future.delayed(const Duration(seconds: 5));
+                // await platform.invokeMethod('disableAutoRotate');
               },
             )
             //
