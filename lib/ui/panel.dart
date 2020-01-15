@@ -67,6 +67,8 @@ String _duration2String(Duration duration) {
 }
 
 class _DefaultFijkPanelState extends State<_DefaultFijkPanel> {
+    static const platform = const MethodChannel('com.anjufabao.videoApp/rotate');
+
   FijkPlayer get player => widget.player;
 
   Duration _duration = Duration();
@@ -269,9 +271,15 @@ class _DefaultFijkPanelState extends State<_DefaultFijkPanel> {
               padding: EdgeInsets.only(left: 10.0, right: 10.0),
 //              color: Colors.transparent,
               onPressed: () {
-                widget.player.value.fullScreen
-                    ? player.exitFullScreen()
-                    : player.enterFullScreen();
+                await platform.invokeMethod('enableAutoRotate');
+                if (widget.player.value.fullScreen) {
+                  player.exitFullScreen();
+                } else {
+                  player.enterFullScreen();
+                }
+                await new Future.delayed(const Duration(seconds: 5));
+                await platform.invokeMethod('disableAutoRotate');
+
               },
             )
             //
