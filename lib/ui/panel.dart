@@ -270,7 +270,7 @@ class _DefaultFijkPanelState extends State<_DefaultFijkPanel> {
                   : Icons.fullscreen),
               padding: EdgeInsets.only(left: 10.0, right: 10.0),
 //              color: Colors.transparent,
-              onPressed: () {
+              onPressed: () async {
                 await platform.invokeMethod('enableAutoRotate');
                 if (widget.player.value.fullScreen) {
                   player.exitFullScreen();
